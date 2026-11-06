@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>吃瓜推特大赛-推特热门瓜点合集_吃瓜围观热点现场</title>
+<meta name="description" content="吃瓜推特大赛聚合推特上的热门瓜点与围观现场，按话题分区浏览爆料、争议与讨论走向，提供热点卡片、时间脉络与围观入口，帮助吃瓜群众快速看清推特热门事件全貌。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111827'/%3E%3Ccircle cx='24' cy='28' r='7' fill='%23f97316'/%3E%3Ccircle cx='42' cy='24' r='5' fill='%23fbbf24'/%3E%3Cpath d='M18 44c6 6 22 6 28 0' stroke='%23f97316' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#111827;
+  --ink-soft:#374151;
+  --muted:#6b7280;
+  --line:#e5e7eb;
+  --bg:#fbfaf7;
+  --card:#ffffff;
+  --brand:#f97316;
+  --brand-deep:#c2410c;
+  --amber:#fbbf24;
+  --dark:#14181f;
+  --radius:16px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img,svg{display:block}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 22px}
+
+/* header */
+.site-header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(251,250,247,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:18px;min-height:70px;flex-wrap:wrap;
+}
+.brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:1.18rem;letter-spacing:.5px}
+.brand-mark{
+  width:42px;height:42px;border-radius:12px;
+  background:linear-gradient(150deg,#1f2937,#374151);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 14px rgba(249,115,22,.22);
+}
+.brand-mark svg{width:26px;height:26px}
+.brand-text{color:var(--ink)}
+.brand-text em{font-style:normal;color:var(--brand-deep)}
+.nav{display:flex;gap:6px;flex-wrap:wrap}
+.nav a{
+  font-size:.92rem;color:var(--ink-soft);padding:7px 13px;border-radius:999px;
+  transition:.2s;font-weight:600;
+}
+.nav a:hover{background:#fef3e7;color:var(--brand-deep)}
+
+/* hero */
+.hero{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(circle at 85% 12%,rgba(251,191,36,.20),transparent 46%),
+    radial-gradient(circle at 8% 90%,rgba(249,115,22,.16),transparent 52%),
+    linear-gradient(160deg,#171c24,#232a35 60%,#1b2029);
+  color:#f9fafb;
+  padding:64px 0 58px;
+}
+.hero::after{
+  content:"";position:absolute;inset:0;
+  background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px);
+  background-size:22px 22px;pointer-events:none;
+}
+.hero-grid{display:grid;grid-template-columns:1.35fr .85fr;gap:44px;align-items:center;position:relative;z-index:2}
+.hero .kicker{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:.8rem;font-weight:700;letter-spacing:1.5px;
+  color:#fdba74;background:rgba(249,115,22,.14);
+  border:1px solid rgba(249,115,22,.35);
+  padding:5px 13px;border-radius:999px;margin-bottom:20px;
+}
+.kicker .dot{width:7px;height:7px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 3px rgba(249,115,22,.25)}
+h1{
+  font-size:clamp(2rem,4.6vw,3.1rem);
+  line-height:1.24;font-weight:900;letter-spacing:1px;margin-bottom:18px;
+  background:linear-gradient(92deg,#ffffff 20%,#fdba74 92%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero p.lead{font-size:1.03rem;color:#cbd5e1;max-width:34em;margin-bottom:26px}
+.hero-actions{display:flex;gap:13px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  font-weight:700;font-size:.95rem;padding:12px 24px;border-radius:999px;
+  transition:.22s;border:1px solid transparent;
+}
+.btn-primary{background:linear-gradient(120deg,#f97316,#ea580c);color:#fff;box-shadow:0 8px 20px rgba(249,115,22,.32)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(249,115,22,.42)}
+.btn-ghost{border-color:rgba(255,255,255,.28);color:#f1f5f9}
+.btn-ghost:hover{background:rgba(255,255,255,.08)}
+.hero-stats{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:14px;
+}
+.stat{
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
+  border-radius:14px;padding:16px 18px;backdrop-filter:blur(4px);
+}
+.stat b{display:block;font-size:1.5rem;color:#fdba74;line-height:1.3}
+.stat span{font-size:.82rem;color:#9ca3af;letter-spacing:.5px}
+.hero-note{
+  margin-top:18px;font-size:.8rem;color:#94a3b8;
+  border-left:3px solid rgba(249,115,22,.55);padding-left:11px;grid-column:1/-1;
+}
+
+/* section base */
+section{padding:58px 0}
+.sec-head{margin-bottom:30px;max-width:40em}
+.sec-tag{
+  font-size:.78rem;font-weight:800;letter-spacing:2px;color:var(--brand-deep);
+  text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:9px;
+}
+.sec-tag::before{content:"";width:26px;height:3px;border-radius:2px;background:var(--brand)}
+h2{font-size:clamp(1.4rem,2.6vw,1.85rem);font-weight:800;letter-spacing:.5px;line-height:1.35}
+.sec-head p{color:var(--muted);margin-top:11px;font-size:.95rem}
+
+/* hot cards */
+.card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px;display:flex;flex-direction:column;gap:12px;
+  transition:.22s;position:relative;overflow:hidden;
+}
+.card::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:4px;
+  background:linear-gradient(90deg,var(--brand),var(--amber));opacity:0;transition:.22s;
+}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(17,24,39,.09);border-color:#fbd7b4}
+.card:hover::before{opacity:1}
+.card-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.tag{
+  font-size:.74rem;font-weight:700;padding:3px 10px;border-radius:6px;
+  background:#fff4e8;color:var(--brand-deep);letter-spacing:.5px;
+}
+.tag.cool{background:#eef2ff;color:#4338ca}
+.tag.alert{background:#fef2f2;color:#b91c1c}
+.card h3{font-size:1.06rem;font-weight:800;line-height:1.5}
+.card p{font-size:.9rem;color:var(--ink-soft);flex:1}
+.card-meta{display:flex;align-items:center;justify-content:space-between;font-size:.8rem;color:var(--muted);border-top:1px dashed var(--line);padding-top:11px}
+.card-meta .more{color:var(--brand-deep);font-weight:700}
+.card-meta .more:hover{text-decoration:underline}
+
+/* stream list */
+.stream{display:grid;grid-template-columns:1fr 320px;gap:36px;align-items:start}
+.entry{
+  display:flex;gap:18px;padding:22px 0;border-bottom:1px solid var(--line);
+}
+.entry:first-child{padding-top:0}
+.entry-idx{
+  flex:0 0 44px;height:44px;border-radius:12px;
+  background:#fff4e8;color:var(--brand-deep);
+  display:flex;align-items:center;justify-content:center;
+  font-weight:900;font-size:1.02rem;border:1px solid #fde3c8;
+}
+.entry-body h3{font-size:1.02rem;font-weight:800;margin-bottom:6px;line-height:1.5}
+.entry-body p{font-size:.9rem;color:var(--ink-soft);margin-bottom:8px}
+.entry-body .time{font-size:.78rem;color:var(--muted);letter-spacing:.4px}
+
+.side-panel{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px;position:sticky;top:92px;
+}
+.side-panel h3{font-size:1rem;font-weight:800;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.side-panel h3 svg{width:18px;height:18px;stroke:var(--brand);fill:none;stroke-width:2}
+.side-list{list-style:none;display:flex;flex-direction:column;gap:12px}
+.side-list li{display:flex;gap:10px;font-size:.88rem;color:var(--ink-soft);line-height:1.6}
+.side-list li i{
+  flex:0 0 6px;height:6px;border-radius:50%;background:var(--brand);margin-top:9px;font-style:normal;
+}
+.side-tip{
+  margin-top:20px;padding-top:18px;border-top:1px dashed var(--line);
+  font-size:.82rem;color:var(--muted);line-height:1.7;
+}
+
+/* guide / explain */
+.explain{
+  background:linear-gradient(180deg,#fff,#fffaf4);
+  border:1px solid var(--line);border-radius:22px;padding:38px;
+}
+.explain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:26px}
+.exp-item h4{font-size:1rem;font-weight:800;margin-bottom:9px;display:flex;align-items:center;gap:9px}
+.exp-num{
+  width:26px;height:26px;border-radius:8px;background:var(--brand);color:#fff;
+  font-size:.8rem;font-weight:800;display:flex;align-items:center;justify-content:center;
+}
+.exp-item p{font-size:.9rem;color:var(--ink-soft)}
+.explain-foot{
+  margin-top:28px;padding-top:20px;border-top:1px dashed var(--line);
+  font-size:.9rem;color:var(--muted);
+}
+
+/* subscribe */
+.cta-band{
+  background:linear-gradient(130deg,#1b2029,#2b3444 70%,#3b2a1b);
+  border-radius:24px;padding:44px 40px;color:#f8fafc;
+  display:flex;align-items:center;justify-content:space-between;gap:34px;flex-wrap:wrap;
+}
+.cta-band h2{color:#fff;font-size:1.5rem}
+.cta-band p{color:#cbd5e1;font-size:.94rem;margin-top:10px;max-width:36em}
+.btn-download{
+  background:rgba(255,255,255,.1);border:1px solid rgba(253,186,116,.5);
+  color:#fdba74;padding:12px 28px;border-radius:999px;font-weight:800;font-size:.95rem;
+  pointer-events:none;opacity:.75;display:inline-flex;align-items:center;gap:8px;
+}
+.btn-download svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2}
+
+/* footer */
+.site-footer{background:var(--dark);color:#9ca3af;padding:46px 0 32px;margin-top:20px}
+.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:34px;margin-bottom:32px}
+.footer-brand{font-weight:800;color:#f9fafb;font-size:1.05rem;display:flex;align-items:center;gap:10px;margin-bottom:13px}
+.footer-brand svg{width:26px;height:26px}
+.site-footer p{font-size:.86rem;line-height:1.8;max-width:30em}
+.footer-col h4{color:#e5e7eb;font-size:.9rem;margin-bottom:13px;font-weight:700}
+.footer-col a{display:block;font-size:.85rem;color:#9ca3af;padding:4px 0;transition:.2s}
+.footer-col a:hover{color:var(--amber)}
+.footer-bottom{
+  border-top:1px solid #262d38;padding-top:20px;
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-size:.8rem;color:#6b7280;
+}
+
+/* responsive */
+@media(max-width:920px){
+  .hero-grid{grid-template-columns:1fr;gap:30px}
+  .card-grid{grid-template-columns:repeat(2,1fr)}
+  .stream{grid-template-columns:1fr}
+  .side-panel{position:static}
+  .explain-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .footer-grid > div:first-child{grid-column:1/-1}
+}
+@media(max-width:620px){
+  .header-inner{min-height:auto;padding:12px 0;gap:10px}
+  .brand{font-size:1rem}
+  .brand-mark{width:36px;height:36px;border-radius:10px}
+  .brand-mark svg{width:22px;height:22px}
+  .nav{gap:2px;width:100%;overflow-x:auto;padding-bottom:2px}
+  .nav a{font-size:.85rem;padding:6px 11px;white-space:nowrap}
+  .hero{padding:44px 0 42px}
+  h1{letter-spacing:.5px}
+  .hero p.lead{font-size:.95rem}
+  .btn{padding:11px 20px;font-size:.9rem}
+  .card-grid{grid-template-columns:1fr}
+  .explain{padding:26px 20px;border-radius:18px}
+  .cta-band{padding:30px 22px;border-radius:18px}
+  .entry{gap:13px}
+  .entry-idx{flex:0 0 38px;height:38px;font-size:.9rem}
+  .footer-grid{grid-template-columns:1fr;gap:24px}
+  section{padding:44px 0}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="24" cy="27" r="7" fill="#f97316"/>
+          <circle cx="43" cy="23" r="5" fill="#fbbf24"/>
+          <path d="M17 43c6 6 22 6 29 0" stroke="#f97316" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <circle cx="24" cy="26" r="2.4" fill="#14181f"/>
+        </svg>
+      </span>
+      <span class="brand-text">吃瓜<em>推特</em>大赛</span>
+    </div>
+    <nav class="nav" aria-label="主导航">
+      <a href="#hot">今日热瓜</a>
+      <a href="#stream">围观脉络</a>
+      <a href="#how">怎么吃瓜</a>
+      <a href="#join">订阅瓜讯</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="hero-h1">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="kicker"><span class="dot"></span>推特热点 · 吃瓜现场</span>
+        <h1 id="hero-h1">吃瓜推特大赛</h1>
+        <p class="lead">推特上的热门瓜点散落在时间线、转推和评论区里，一条爆料往往几小时内就翻出好几层新说法。吃瓜推特大赛把这些零散现场收拢到一处，按话题分门别类，让你先看清来龙去脉，再决定要不要下场围观。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#hot">进入今日热瓜
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="#how">吃瓜前先看这份说明</a>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><b>4</b><span>今日话题分区</span></div>
+        <div class="stat"><b>12</b><span>精选瓜点卡片</span></div>
+        <div class="stat"><b>7×24</b><span>热点滚动更新</span></div>
+        <div class="stat"><b>3 步</b><span>辨明事件脉络</span></div>
+        <p class="hero-note">吃瓜推特大赛只做信息归拢与话题索引，不代替你判断真假；涉及当事人的争议内容，请以公开信源为准。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOT CARDS -->
+  <section id="hot">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-tag">今日热瓜</div>
+        <h2>推特上正在被反复转推的几个现场</h2>
+        <p>吃瓜推特大赛把热门瓜点按性质分成爆料、争议、反转与冷处理四类。每张卡片给出话题方向、讨论密度和跟进价值，方便你先挑最想看的那个。</p>
+      </div>
+      <div class="card-grid">
+
+        <article class="card">
+          <div class="card-top"><span class="tag alert">爆料</span><span class="card-meta" style="border:0;padding:0;font-size:.78rem">讨论密度 高</span></div>
+          <h3>某品牌公关稿与推文口径不一致</h3>
+          <p>推上先出现截图，随后官方账号发文否认，两小时后又被网友找出旧帖对照。吃瓜推特大赛把三方时间点排在一起，谁先谁后一目了然。</p>
+          <div class="card-meta"><span>跟进价值 ★★★★</span><a class="more" href="#stream">看脉络</a></div>
+        </article>
+
+        <article class="card">
+          <div class="card-top"><span class="tag">争议</span><span class="card-meta" style="border:0;padding:0;font-size:.78rem">讨论密度 中高</span></div>
+          <h3>大V互挂引发的评论区混战</h3>
+          <p>两位博主连续互挂，粉丝在评论区各执一词。真正有价值的不是谁骂赢了，而是双方各自引用的原始材料是否站得住脚。</p>
+          <div class="card-meta"><span>跟进价值 ★★★☆</span><a class="more" href="#stream">看脉络</a></div>
+        </article>
+
+        <article class="card">
+          <div class="card-top"><span class="tag cool">反转</span><span class="card-meta" style="border:0;padding:0;font-size:.78rem">讨论密度 高</span></div>
+          <h3>一条“实锤”被指出是旧图重发</h3>
+          <p>热传截图被反向搜图找到更早出处，时间戳对不上。吃瓜推特大赛提醒：先看原帖发布时间，再看转发链上的第一手信源。</p>
+          <div class="card-meta"><span>跟进价值 ★★★★</span><a class="more" href="#stream">看脉络</a></div>
+        </article>
+
+        <article class="card">
+          <div class="card-top"><span class="tag">爆料</span><span class="card-meta" style="border:0;padding:0;font-size:.78rem">讨论密度 中</span></div>
+          <h3>行业内部聊天记录流出</h3>
+          <p>截图真伪尚待确认，但其中提到的项目节点与公开排期有部分吻合。吃瓜推特大赛将可核对的部分单独标出，避免整段照单全收。</p>
+          <div class="card-meta"><span>跟进价值 ★★★☆</span><a class="more" href="#stream">看脉络</a></div>
+        </article>
+
+        <article class="card">
+          <div class="card-top"><span class="tag cool">冷处理</span><span class="card-meta" style="border:0;padding:0;font-size:.78rem">讨论密度 低</span></div>
+          <h3>当事人删帖但截图仍在流转</h3>
+          <p>原帖删除后，转推和截图继续扩散。吃瓜推特大赛同时记录“原帖已删”和“截图仍在传”两个状态，避免只看到其中一面。</p>
+          <div class="card-meta"><span>跟进价值 ★★☆</span><a class="more" href="#stream">看脉络</a></div>
+        </article>
+
+        <article class="card">
+          <div class="card-top"><span class="tag">争议</span><span class="card-meta" style="border:0;padding:0;font-size:.78rem">讨论密度 中</span></div>
+          <h3>搬运号与原创号的署名之争</h3>
+          <p>同一段视频被多个账号先后发布，首发时间成为争论核心。围观这类瓜，时间线和账号历史比情绪化评论更有参考价值。</p>
+          <div class="card-meta"><span>跟进价值 ★★★</span><a class="more" href="#stream">看脉络</a></div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- STREAM -->
+  <section id="stream">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-tag">围观脉络</div>
+        <h2>把一条瓜按时间顺序摆开</h2>
+        <p>吃瓜推特大赛的脉络区不追求一次说完，而是把每个节点单独列出来。读完之后你会知道：最早的信源是什么，中间谁加了料，现在停在哪一步。</p>
+      </div>
+      <div class="stream">
+        <div class="stream-main">
+
+          <article class="entry">
+            <div class="entry-idx">01</div>
+            <div class="entry-body">
+              <h3>原始帖出现：信息量最小，也最关键</h3>
+              <p>大多数推特瓜都从一个普通账号的短帖开始，配图、时间、措辞决定了后面所有解读的空间。吃瓜推特大赛建议先看这条原帖有没有被编辑或删除记录。</p>
+              <span class="time">节点特征 · 单点信源 / 尚未形成话题</span>
+            </div>
+          </article>
+
+          <article class="entry">
+            <div class="entry-idx">02</div>
+            <div class="entry-body">
+              <h3>大号转发：讨论开始加速</h3>
+              <p>当几个粉丝量可观的账号同时转推，评论区会迅速分裂成支持与质疑两派。此时信息本身没变，变的是被解读的角度，这也是吃瓜推特大赛单独标注“转推节点”的原因。</p>
+              <span class="time">节点特征 · 关注度陡增 / 观点分化</span>
+            </div>
+          </article>
+
+          <article class="entry">
+            <div class="entry-idx">03</div>
+            <div class="entry-body">
+              <h3>补充材料进场：出现新证据或新说法</h3>
+              <p>有人翻出旧帖、有人发出聊天记录、有人贴出后台截图。材料越多，越需要分辨哪些能对应上公开信息，哪些只是一家之言。脉络区会把补充材料与原帖分开陈列。</p>
+              <span class="time">节点特征 · 信源增多 / 需要交叉核对</span>
+            </div>
+          </article>
+
+          <article class="entry">
+            <div class="entry-idx">04</div>
+            <div class="entry-body">
+              <h3>当事人回应：口径是否前后一致</h3>
+              <p>回应往往决定瓜的走向。吃瓜推特大赛关注的是回应里的具体表述，而不是情绪强弱；同一件事前后说法有没有出入，是可以逐句比对的。</p>
+              <span class="time">节点特征 · 官方表态 / 可对照前文</span>
+            </div>
+          </article>
+
+          <article class="entry">
+            <div class="entry-idx">05</div>
+            <div class="entry-body">
+              <h3>热度回落：留档比继续吵更有用</h3>
+              <p>话题降温后，评论区会留下大量无法验证的二手说法。吃瓜推特大赛把可核对的节点留档，把纯情绪内容折叠，方便你之后回看时不被噪音干扰。</p>
+              <span class="time">节点特征 · 讨论衰减 / 进入留档阶段</span>
+            </div>
+          </article>
+
+        </div>
+
+        <aside class="side-panel" aria-label="围观提示">
+          <h3>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 3l9 16H3z" stroke-linejoin="round"/><path d="M12 10v4M12 17h.01" stroke-linecap="round"/></svg>
+            围观提示
+          </h3>
+          <ul class="side-list">
+            <li><i></i>先看原帖时间戳，再看转发链第一手信源。</li>
+            <li><i></i>截图能裁切，原帖链接更难伪造。</li>
+            <li><i></i>“已删帖”本身也是信息，别当成没发生。</li>
+            <li><i></i>评论区高赞不等于事实，只代表情绪共鸣。</li>
+            <li><i></i>涉及个人隐私和未证实指控，转发前多想一步。</li>
+          </ul>
+          <p class="side-tip">吃瓜推特大赛整理的是公开可见的推特讨论，不鼓励人肉、骚扰或对当事人进行未经验证的定性。</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW -->
+  <section id="how">
+    <div class="wrap">
+      <div class="explain">
+        <div class="sec-head" style="margin-bottom:0">
+          <div class="sec-tag">怎么吃瓜</div>
+          <h2>三步看清一条推特热瓜</h2>
+          <p>吃瓜推特大赛把围观拆成可重复的动作：定位信源、对照材料、判断停留点。学会之后，任何一条新瓜你都能自己排一遍。</p>
+        </div>
+        <div class="explain-grid">
+          <div class="exp-item">
+            <h4><span class="exp-num">1</span>定位最早信源</h4>
+            <p>从热传帖往回翻，找到时间最早、信息最原始的那条。它可能只有一句话一张图，但后面所有版本都是它的变体。</p>
+          </div>
+          <div class="exp-item">
+            <h4><span class="exp-num">2</span>对照补充材料</h4>
+            <p>把旧帖、截图、回应按时间排开，看哪些能互相印证。对不上的部分先存疑，不要急着站队，也不要急着下结论。</p>
+          </div>
+          <div class="exp-item">
+            <h4><span class="exp-num">3</span>判断停留点</h4>
+            <p>有些瓜到当事人回应就该停，有些要等第三方核实。吃瓜推特大赛在每张卡片上标注跟进价值，就是帮你决定还要不要继续追。</p>
+          </div>
+        </div>
+        <p class="explain-foot">以上三步适用于绝大多数推特热点。吃瓜推特大赛不提供结论，只提供可回查的节点顺序与材料清单。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="join">
+    <div class="wrap">
+      <div class="cta-band">
+        <div>
+          <h2>订阅吃瓜推特大赛的每日瓜讯</h2>
+          <p>每天整理一轮推特热门话题，按爆料、争议、反转分类推送，附上原帖入口与关键节点。想先离线保存完整瓜单，也可以下载归档版。</p>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center">
+          <a class="btn btn-primary" href="#hot">回看今日热瓜</a>
+          <a class="btn-download" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 3v12M7 11l5 5 5-5M4 20h16" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            下载瓜单
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="24" cy="27" r="7" fill="#f97316"/>
+            <circle cx="43" cy="23" r="5" fill="#fbbf24"/>
+            <path d="M17 43c6 6 22 6 29 0" stroke="#f97316" stroke-width="4" fill="none" stroke-linecap="round"/>
+          </svg>
+          吃瓜推特大赛
+        </div>
+        <p>吃瓜推特大赛是推特热点话题的归拢页，按话题分区整理爆料、争议与反转现场，标注原帖入口与时间节点。内容仅作信息索引，不代替事实核查。</p>
+      </div>
+      <div class="footer-col">
+        <h4>快速入口</h4>
+        <a href="#hot">今日热瓜</a>
+        <a href="#stream">围观脉络</a>
+        <a href="#how">怎么吃瓜</a>
+        <a href="#join">订阅瓜讯</a>
+      </div>
+      <div class="footer-col">
+        <h4>围观须知</h4>
+        <a href="#stream">信源核对提示</a>
+        <a href="#how">三步辨脉络</a>
+        <a href="#join">瓜单归档说明</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 吃瓜推特大赛 · 推特热点话题索引</span>
+      <span>理性吃瓜 · 不信谣不传谣</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
