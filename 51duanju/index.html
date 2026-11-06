@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>51短剧未删减-短剧未删减版哪里看_无删减短剧合集资源</title>
+<meta name="description" content="51短剧未删减主题首页，围绕短剧未删减版观看入口、无删减短剧合集与更新节奏展开，帮助观众快速了解51短剧未删减的内容分类与查找方式。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2313121a'/%3E%3Crect x='13' y='18' width='38' height='28' rx='6' fill='none' stroke='%23ff5c8a' stroke-width='4'/%3E%3Cpath d='M28 26l12 6-12 6z' fill='%23ffd166'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#0e0d13;
+  --bg-soft:#17151f;
+  --card:#1d1a26;
+  --line:#2e2a3b;
+  --text:#ece9f2;
+  --muted:#a49fb4;
+  --pink:#ff5c8a;
+  --gold:#ffd166;
+  --cyan:#59d3d0;
+  --radius:16px;
+  --maxw:1140px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+
+/* 页头 */
+header.site{
+  position:sticky;top:0;z-index:50;
+  background:rgba(14,13,19,.88);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav{display:flex;align-items:center;gap:26px;height:68px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;letter-spacing:.4px;white-space:nowrap}
+.logo .mark{width:34px;height:34px;flex:0 0 auto}
+.logo span{background:linear-gradient(92deg,var(--pink),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.nav ul{display:flex;gap:22px;list-style:none;margin-left:auto;font-size:14.5px;color:var(--muted)}
+.nav ul a{transition:color .2s}
+.nav ul a:hover{color:var(--pink)}
+.nav .cta{
+  font-size:14px;padding:8px 16px;border-radius:999px;
+  background:linear-gradient(92deg,var(--pink),#ff8a5c);color:#1a0d13;font-weight:700;
+}
+.menu-btn{display:none;margin-left:auto;background:none;border:1px solid var(--line);color:var(--text);border-radius:10px;padding:6px 12px;font-size:14px}
+
+/* 首屏 */
+.hero{
+  position:relative;overflow:hidden;
+  padding:66px 0 58px;
+  border-bottom:1px solid var(--line);
+  background:
+    radial-gradient(760px 320px at 82% -10%,rgba(255,92,138,.22),transparent 68%),
+    radial-gradient(620px 300px at 8% 110%,rgba(89,211,208,.13),transparent 70%);
+}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:46px;align-items:center}
+.tagline{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--gold);border:1px solid rgba(255,209,102,.35);border-radius:999px;padding:5px 14px;margin-bottom:20px}
+.tagline i{width:7px;height:7px;border-radius:50%;background:var(--gold);display:block}
+h1{font-size:clamp(30px,4.4vw,50px);line-height:1.18;font-weight:800;letter-spacing:.5px}
+h1 em{font-style:normal;background:linear-gradient(92deg,var(--pink),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lede{margin-top:18px;color:var(--muted);font-size:16px;max-width:34em}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:13px 26px;border-radius:12px;font-weight:700;font-size:15px;
+  transition:transform .18s,box-shadow .18s;
+}
+.btn-primary{background:linear-gradient(92deg,var(--pink),#ff8a5c);color:#1a0d13;box-shadow:0 10px 26px rgba(255,92,138,.28)}
+.btn-ghost{border:1px solid var(--line);color:var(--text);background:var(--bg-soft)}
+.btn:hover{transform:translateY(-2px)}
+.btn[aria-disabled="true"]{opacity:.82;cursor:default;pointer-events:none;box-shadow:none;transform:none}
+.hero-art{background:var(--bg-soft);border:1px solid var(--line);border-radius:22px;padding:18px}
+.hero-art .cap{display:flex;justify-content:space-between;font-size:12.5px;color:var(--muted);margin-bottom:12px}
+.hero-art .cap b{color:var(--cyan);font-weight:600}
+.screen{border-radius:14px;overflow:hidden;background:#0b0a10;border:1px solid #2a2636}
+.screen-row{display:flex;gap:10px;padding:12px}
+.thumb{
+  flex:1;aspect-ratio:3/4;border-radius:10px;position:relative;overflow:hidden;
+  background:linear-gradient(160deg,#2a2338,#171422);
+  border:1px solid #322c42;
+}
+.thumb::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 50% at 50% 35%,rgba(255,92,138,.22),transparent 70%)}
+.thumb b{position:absolute;left:8px;bottom:8px;font-size:11px;color:#d9d4e6;font-weight:500;z-index:2}
+.thumb .play{position:absolute;inset:0;display:grid;place-items:center;z-index:2}
+.thumb .play svg{width:26px;height:26px;opacity:.85}
+
+/* 通用区块 */
+section{padding:64px 0}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:32px;flex-wrap:wrap}
+.sec-head h2{font-size:clamp(22px,2.6vw,30px);font-weight:800;letter-spacing:.4px}
+.sec-head h2 small{display:block;font-size:13px;font-weight:500;color:var(--pink);letter-spacing:2px;margin-bottom:8px}
+.sec-head p{color:var(--muted);font-size:14.5px;max-width:40em}
+.alt{background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+
+/* 卡片 */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px 22px;transition:border-color .2s,transform .2s;
+}
+.card:hover{border-color:rgba(255,92,138,.5);transform:translateY(-3px)}
+.card .ico{width:42px;height:42px;border-radius:11px;display:grid;place-items:center;background:rgba(255,92,138,.13);margin-bottom:16px}
+.card h3{font-size:17px;margin-bottom:9px;font-weight:700}
+.card p{color:var(--muted);font-size:14.5px}
+.card .meta{margin-top:14px;font-size:12.5px;color:var(--cyan)}
+
+/* 列表栏目 */
+.split{display:grid;grid-template-columns:1fr 340px;gap:40px;align-items:start}
+.list{display:flex;flex-direction:column;gap:0}
+.item{display:grid;grid-template-columns:56px 1fr;gap:18px;padding:22px 0;border-bottom:1px dashed var(--line)}
+.item:first-child{padding-top:0}
+.item .no{font-size:22px;font-weight:800;color:transparent;-webkit-text-stroke:1px #5a526e;line-height:1.3}
+.item h3{font-size:16.5px;margin-bottom:6px}
+.item p{color:var(--muted);font-size:14.3px}
+.item .tags{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap}
+.chip{font-size:12px;color:#cbc5da;border:1px solid var(--line);border-radius:999px;padding:2px 10px}
+
+.aside{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+.aside h3{font-size:15px;margin-bottom:14px;color:var(--gold);letter-spacing:.5px}
+.aside ul{list-style:none;display:flex;flex-direction:column;gap:12px;font-size:14px;color:var(--muted)}
+.aside ul li{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid #262232;padding-bottom:12px}
+.aside ul li:last-child{border-bottom:none;padding-bottom:0}
+.aside ul li span:last-child{color:var(--text);font-weight:600}
+.aside .note{margin-top:16px;font-size:12.5px;color:#7f7a8f;line-height:1.7}
+
+/* 搜索筛选 */
+.filter-bar{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px}
+.filter-bar button{
+  font:inherit;font-size:13.5px;padding:8px 18px;border-radius:999px;cursor:pointer;
+  background:transparent;border:1px solid var(--line);color:var(--muted);transition:.2s;
+}
+.filter-bar button:hover{color:var(--text);border-color:#4b4460}
+.filter-bar button.active{background:var(--pink);border-color:var(--pink);color:#1a0d13;font-weight:700}
+.grid-mini{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.mini{
+  background:var(--card);border:1px solid var(--line);border-radius:13px;padding:16px;
+}
+.mini .k{font-size:12px;color:var(--gold);letter-spacing:1px;margin-bottom:8px}
+.mini h4{font-size:15px;margin-bottom:6px;font-weight:700}
+.mini p{font-size:13px;color:var(--muted)}
+.mini[hidden]{display:none}
+
+/* 正文段落 */
+.prose{max-width:760px}
+.prose h2{font-size:clamp(21px,2.4vw,27px);margin-bottom:18px;font-weight:800}
+.prose p{color:#c9c4d6;font-size:15.4px;margin-bottom:16px}
+.prose strong{color:var(--text)}
+.prose .hl{color:var(--pink);font-weight:600}
+
+/* FAQ */
+.faq{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:18px 20px}
+.faq summary{cursor:pointer;font-weight:700;font-size:15.2px;list-style:none;display:flex;justify-content:space-between;gap:14px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"＋";color:var(--pink);font-weight:700}
+.faq details[open] summary::after{content:"－"}
+.faq details p{margin-top:12px;font-size:14.2px;color:var(--muted)}
+
+/* 提示条 */
+.banner{
+  margin:0 0 0;
+  display:flex;flex-wrap:wrap;align-items:center;gap:18px;justify-content:space-between;
+  background:linear-gradient(92deg,rgba(255,92,138,.14),rgba(255,209,102,.08));
+  border:1px solid rgba(255,92,138,.32);border-radius:var(--radius);padding:24px 26px;
+}
+.banner h3{font-size:18px;margin-bottom:5px}
+.banner p{color:var(--muted);font-size:14px}
+
+/* 页尾 */
+footer.site{background:#0a0910;border-top:1px solid var(--line);padding:44px 0 30px;font-size:14px;color:var(--muted)}
+.foot-top{display:flex;flex-wrap:wrap;gap:36px;justify-content:space-between;margin-bottom:30px}
+.foot-brand{max-width:330px}
+.foot-brand .logo{margin-bottom:12px}
+.foot-brand p{font-size:13.5px;line-height:1.8;color:#8d879d}
+.foot-cols{display:flex;gap:56px;flex-wrap:wrap}
+.foot-cols h4{color:var(--text);font-size:14px;margin-bottom:12px}
+.foot-cols ul{list-style:none;display:flex;flex-direction:column;gap:9px;font-size:13.5px}
+.foot-cols a:hover{color:var(--pink)}
+.foot-bottom{border-top:1px solid #201d2b;padding-top:20px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;font-size:12.5px;color:#726c84}
+
+@media(max-width:980px){
+  .hero-grid{grid-template-columns:1fr}
+  .hero-art{order:-1}
+  .split{grid-template-columns:1fr}
+  .cards{grid-template-columns:1fr 1fr}
+  .grid-mini{grid-template-columns:1fr 1fr}
+}
+@media(max-width:720px){
+  .nav ul{display:none}
+  .nav .cta{display:none}
+  .menu-btn{display:block}
+  .nav{height:62px}
+  .hero{padding:44px 0 40px}
+  .cards{grid-template-columns:1fr}
+  .grid-mini{grid-template-columns:1fr}
+  .faq{grid-template-columns:1fr}
+  section{padding:48px 0}
+  .foot-cols{gap:32px}
+  .prose p{font-size:15px}
+  .banner{padding:20px}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="51短剧未删减 首页">
+      <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#1d1a26"/>
+        <rect x="12" y="18" width="40" height="28" rx="6" fill="none" stroke="#ff5c8a" stroke-width="4"/>
+        <path d="M28 26l12 6-12 6z" fill="#ffd166"/>
+      </svg>
+      <span>51短剧未删减</span>
+    </a>
+    <ul>
+      <li><a href="#why">内容看点</a></li>
+      <li><a href="#list">剧集清单</a></li>
+      <li><a href="#find">查找方式</a></li>
+      <li><a href="#faq">常见疑问</a></li>
+    </ul>
+    <a class="cta" href="#list">看未删减合集</a>
+    <button class="menu-btn" type="button" onclick="document.getElementById('list').scrollIntoView()">剧集清单</button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- 首屏 -->
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="tagline"><i></i>短剧未删减版 · 完整剧情版本</div>
+        <h1>51短剧未删减</h1>
+        <p class="lede">围绕短剧未删减版的观看需求，这里把 51短剧未删减 的内容分类、剧情完整度与查找路径说清楚：想看的片段在哪里、哪些版本更接近原片、更新节奏怎么跟。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#list">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            查看未删减合集
+          </a>
+          <a class="btn btn-ghost" href="#find">怎么找到完整版</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="cap"><span>今日热播 · 完整版</span><b>更新中</b></div>
+        <div class="screen">
+          <div class="screen-row">
+            <div class="thumb"><b>都市线</b><span class="play"><svg viewBox="0 0 24 24" fill="#ffd166"><path d="M8 5v14l11-7z"/></svg></span></div>
+            <div class="thumb"><b>悬疑线</b><span class="play"><svg viewBox="0 0 24 24" fill="#ffd166"><path d="M8 5v14l11-7z"/></svg></span></div>
+            <div class="thumb"><b>情感线</b><span class="play"><svg viewBox="0 0 24 24" fill="#ffd166"><path d="M8 5v14l11-7z"/></svg></span></div>
+          </div>
+          <div class="screen-row" style="padding-top:0">
+            <div class="thumb" style="aspect-ratio:16/7;flex:3"><b>未删减片段 · 完整叙事</b></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 看点 -->
+  <section id="why">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2><small>WHY UNCUT</small>为什么观众更在意未删减版本</h2>
+        <p>短剧节奏快、单集短，被剪掉的往往是人物动机与转折铺垫。完整版本的价值，主要体现在叙事链条是否闭合。</p>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff5c8a" stroke-width="2"><path d="M4 6h16M4 12h10M4 18h13"/></svg></div>
+          <h3>剧情衔接更顺</h3>
+          <p>未删减版本保留了被压缩的过场与对手戏，人物情绪变化有过渡，前后因果更容易对上。</p>
+          <div class="meta">关注：叙事完整度</div>
+        </div>
+        <div class="card">
+          <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffd166" stroke-width="2"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></div>
+          <h3>关键片段不跳戏</h3>
+          <p>很多观众是被短视频切片吸引来的，切片的上下文常被省略。回到完整版本，才看清事情怎么发生。</p>
+          <div class="meta">关注：片段上下文</div>
+        </div>
+        <div class="card">
+          <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#59d3d0" stroke-width="2"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg></div>
+          <h3>版本表达更统一</h3>
+          <p>同一部剧在不同渠道可能出现多版剪辑。51短剧未删减 栏目按版本标识区分，减少看错版本的麻烦。</p>
+          <div class="meta">关注：版本区分</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 剧集清单 -->
+  <section id="list" class="alt">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2><small>COLLECTION</small>未删减合集 · 分类浏览</h2>
+        <p>按题材筛选，快速定位想看的短剧类型。列表仅作分类导航，具体剧集以实际可观看的版本为准。</p>
+      </div>
+      <div class="filter-bar" role="group" aria-label="按题材筛选短剧">
+        <button type="button" class="active" data-cat="all">全部</button>
+        <button type="button" data-cat="city">都市</button>
+        <button type="button" data-cat="sus">悬疑</button>
+        <button type="button" data-cat="emo">情感</button>
+        <button type="button" data-cat="fan">奇幻</button>
+      </div>
+      <div class="grid-mini" id="miniGrid">
+        <div class="mini" data-cat="city"><div class="k">都市</div><h4>逆袭线合集</h4><p>从低谷到翻盘的完整过程，重点在成长节点的铺垫。</p></div>
+        <div class="mini" data-cat="sus"><div class="k">悬疑</div><h4>反转短剧</h4><p>结局反转前的线索需要完整镜头支撑，删减后容易断线。</p></div>
+        <div class="mini" data-cat="emo"><div class="k">情感</div><h4>双人对手戏</h4><p>情绪递进依赖长镜头与停顿，完整版本更有代入感。</p></div>
+        <div class="mini" data-cat="fan"><div class="k">奇幻</div><h4>世界观设定</h4><p>设定交代分散在全片，剪掉设定段落后理解成本变高。</p></div>
+        <div class="mini" data-cat="city"><div class="k">都市</div><h4>职场群像</h4><p>配角线常被压缩，未删减版本能看清人物关系网。</p></div>
+        <div class="mini" data-cat="sus"><div class="k">悬疑</div><h4>多时间线</h4><p>时间跳跃靠细节镜头提示，缺一段就可能误读顺序。</p></div>
+        <div class="mini" data-cat="emo"><div class="k">情感</div><h4>家庭叙事</h4><p>日常段落看似平淡，却是矛盾爆发前的必要积累。</p></div>
+        <div class="mini" data-cat="fan"><div class="k">奇幻</div><h4>设定补完</h4><p>完整版本保留规则说明，观众不必靠猜补全逻辑。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 查找方式 + 侧栏 -->
+  <section id="find">
+    <div class="wrap split">
+      <div>
+        <div class="sec-head" style="margin-bottom:24px">
+          <h2><small>HOW TO FIND</small>找 51短剧未删减 内容的四个步骤</h2>
+        </div>
+        <div class="list">
+          <div class="item">
+            <div class="no">01</div>
+            <div>
+              <h3>先确认你看到的是哪一版</h3>
+              <p>切片号、合集号、正片号常混在一起。先记下剧名与集数，再对照版本标识，避免把剪辑片段当成完整剧情。</p>
+              <div class="tags"><span class="chip">剧名</span><span class="chip">集数</span><span class="chip">版本标识</span></div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="no">02</div>
+            <div>
+              <h3>按题材进入对应分类</h3>
+              <p>都市、悬疑、情感、奇幻四类在叙事结构上差别明显。先定题材再挑剧，比在长列表里翻找效率更高。</p>
+              <div class="tags"><span class="chip">题材筛选</span><span class="chip">分类导航</span></div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="no">03</div>
+            <div>
+              <h3>核对关键剧情是否连贯</h3>
+              <p>打开后先看转折处是否突兀：人物态度突然变化、场景无故跳跃，往往说明这一段被剪过。</p>
+              <div class="tags"><span class="chip">转折点</span><span class="chip">连贯性</span></div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="no">04</div>
+            <div>
+              <h3>关注更新节奏再追</h3>
+              <p>短剧上线常分批放出，未删减版可能晚于剪辑版。把想追的剧名记下来，按更新进度回看更省时间。</p>
+              <div class="tags"><span class="chip">更新进度</span><span class="chip">追剧清单</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <aside class="aside">
+        <h3>分类速览</h3>
+        <ul>
+          <li><span>都市逆袭</span><span>剧情线清晰</span></li>
+          <li><span>悬疑反转</span><span>线索密集</span></li>
+          <li><span>情感对手戏</span><span>镜头较长</span></li>
+          <li><span>奇幻设定</span><span>说明段落多</span></li>
+        </ul>
+        <p class="note">以上为内容特征归纳，用于帮助你判断哪类短剧更依赖完整版本，不构成对具体剧集质量的评价。</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 正文 -->
+  <section class="alt">
+    <div class="wrap prose">
+      <h2>51短剧未删减：完整版本到底差在哪</h2>
+      <p>短剧的单集时长通常只有几分钟，信息密度高，剪辑点也密。一部剧从正片到公开传播的版本之间，常会经历二次压缩：为了节奏更快，把铺垫段落、次要人物对话、场景过渡剪短。观众看到的画面更紧凑，但人物的行为逻辑可能因此缺少解释。围绕 <span class="hl">51短剧未删减</span> 的查找需求，本质上就是希望补回这些被剪掉的部分。</p>
+      <p>具体来说，<strong>未删减版本的价值集中在三处</strong>。第一是动机铺垫：角色为什么突然改变立场，往往在前一场戏里有交代。第二是关系线：配角之间的互动被压缩后，主线冲突会显得单薄。第三是设定说明：奇幻或悬疑题材依赖规则与线索，删掉一句台词，观众就可能误解整个结局。这也是为什么不少人在看完剪辑片段后，会再去找 <span class="hl">51短剧未删减</span> 的完整版本对照。</p>
+      <p>需要说明的是，<strong>“未删减”并不等于“更好看”</strong>。完整版本节奏相对慢，部分过场对追求爽感的观众来说是冗余的。因此更实际的做法是先按题材判断：都市逆袭类可以看剪辑版快速了解主线，悬疑反转类建议看完整版，否则线索容易断；情感对手戏与奇幻设定类，完整版本的收益通常更明显。</p>
+      <p>在查找路径上，51短剧未删减 栏目采用题材分类加版本标识的方式组织内容，目的是让你在打开之前就知道自己看的是哪一种剪辑。页面上方的筛选控件可以按都市、悬疑、情感、奇幻切换，下方清单只做导航，具体剧集与更新以实际可观看的版本为准。若你手上已有想追的剧名，建议先记录剧名与集数，再对照分类入口，减少在多个版本之间反复切换的时间。</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2><small>FAQ</small>关于短剧未删减版的常见疑问</h2>
+        <p>以下回答基于短剧传播的一般情况整理，具体剧集的版本差异以实际内容为准。</p>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>未删减版一定比剪辑版长吗？</summary>
+          <p>通常更长，但差异幅度因剧而异。有的剧只补回几十秒过场，有的会恢复整段对手戏。判断依据是转折处是否连贯，而不是单纯看总时长。</p>
+        </details>
+        <details>
+          <summary>为什么同一部剧会有多个版本？</summary>
+          <p>短剧在不同渠道上线时，可能按平台时长要求重新剪辑。版本标识因此有必要，51短剧未删减 的分类也以此区分，避免把不同剪辑混为一谈。</p>
+        </details>
+        <details>
+          <summary>怎么快速判断一段剧情被剪过？</summary>
+          <p>留意三种信号：人物态度突变、场景无过渡跳转、台词前后指代不明。出现其中两种，基本可以怀疑该段被压缩过。</p>
+        </details>
+        <details>
+          <summary>追更时应该先看哪一版？</summary>
+          <p>如果只想了解主线，剪辑版足够；如果在意人物动机与结局逻辑，建议直接看完整版本，避免先入为主地误读剧情。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 收束 -->
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="banner">
+        <div>
+          <h3>从题材入口开始，找到你要的完整版本</h3>
+          <p>51短剧未删减 按都市、悬疑、情感、奇幻分类整理，先定类型再挑剧，比盲翻列表更省时间。</p>
+        </div>
+        <a class="btn btn-primary" href="#list">进入未删减合集</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="logo">
+          <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#1d1a26"/>
+            <rect x="12" y="18" width="40" height="28" rx="6" fill="none" stroke="#ff5c8a" stroke-width="4"/>
+            <path d="M28 26l12 6-12 6z" fill="#ffd166"/>
+          </svg>
+          <span>51短剧未删减</span>
+        </div>
+        <p>围绕短剧未删减版的分类导航与查找说明，帮助观众区分不同剪辑版本，按题材快速定位想看的内容。</p>
+      </div>
+      <div class="foot-cols">
+        <div>
+          <h4>内容</h4>
+          <ul>
+            <li><a href="#why">内容看点</a></li>
+            <li><a href="#list">剧集清单</a></li>
+            <li><a href="#find">查找方式</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>帮助</h4>
+          <ul>
+            <li><a href="#faq">常见疑问</a></li>
+            <li><a href="#find">版本区分</a></li>
+            <li><a href="#top">返回顶部</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>下载</h4>
+          <ul>
+            <li><a href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2024 51短剧未删减 · 内容分类与查找说明</span>
+      <span>页面信息以实际可观看版本为准</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btns = document.querySelectorAll('.filter-bar button');
+  var items = document.querySelectorAll('#miniGrid .mini');
+  btns.forEach(function(b){
+    b.addEventListener('click', function(){
+      btns.forEach(function(x){ x.classList.remove('active'); });
+      b.classList.add('active');
+      var cat = b.getAttribute('data-cat');
+      items.forEach(function(it){
+        it.hidden = !(cat === 'all' || it.getAttribute('data-cat') === cat);
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
